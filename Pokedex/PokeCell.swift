@@ -14,7 +14,8 @@ class PokeCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     var pokemon: Pokemon!
-    
+  
+    //generic info for each cell
     func configureCell(pokemon: Pokemon) {
         
         self.pokemon = pokemon
