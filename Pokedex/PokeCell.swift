@@ -14,8 +14,15 @@ class PokeCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     var pokemon: Pokemon!
+    
+//This is allow for image layers/styles to be added to cells
+    required init?(coder eDecoder: NSCoder) {
+        super.init(coder: eDecoder)
+        
+        layer.cornerRadius = 10.0
+    }
   
-    //generic info for each cell
+//generic info for each cell
     func configureCell(pokemon: Pokemon) {
         
         self.pokemon = pokemon
