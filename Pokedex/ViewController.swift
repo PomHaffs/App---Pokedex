@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -14,6 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collection: UICollectionView!
     
     var pokemonArray = [Pokemon]()
+    var musicPlayer: AVAudioPlayer!
     
 //This is where all the things you need to happen first go
     override func viewDidLoad() {
@@ -23,6 +25,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.delegate = self
         
         parsePokemonCSV()
+        initAudio()
+    }
+    
+    //This gets audio ready for AVPlayer
+    func initAudio() {
+        
+        let path = Bundle.main.path(forResource: "pokemon", ofType: "mp3")
+        
+        do {
+            
+            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path!)!)
+            musicPlayer.prepareToPlay()
+//continous loop
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
     }
     
 //This will parse thru csv data and get whatever we want, goes thru each row, and then takes name and ID, then we append it to pokemon Array
@@ -84,5 +105,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 105, height: 105)
     }
+  
+//This will play and pause the music and create button action
+    @IBAction func musicButtonPressed(_ sender: UIButton) {
+        
+        if musicPlayer.isPlaying {
+            
+            musicPlayer.pause()
+            sender.alpha = 0.2
+            
+        } else {
+            
+            musicPlayer.play()
+            sender.alpha = 1.0
+        }
+        
+    }
+    
+    
+    
 }
 
