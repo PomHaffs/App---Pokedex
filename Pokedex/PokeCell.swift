@@ -22,8 +22,8 @@ class PokeCell: UICollectionViewCell {
         layer.cornerRadius = 10.0
     }
   
-//generic info for each cell
-    func configureCell(pokemon: Pokemon) {
+//Info used for each cell - name and ID
+    func configureCell(_ pokemon: Pokemon) {
         
         self.pokemon = pokemon
         
