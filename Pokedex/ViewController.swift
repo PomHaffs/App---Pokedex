@@ -31,6 +31,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.delegate = self
         searchBar.delegate = self
         
+        searchBar.returnKeyType = UIReturnKeyType.done
+        
         parsePokemonCSV()
         initAudio()
     }
@@ -145,6 +147,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+//This removes the keyboard on hardware once search completed
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
 //SEARCH This is allowing for each key stroke to norrow the returned results. This requires a bool for if we are in search mode
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -152,6 +159,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             inSearchMode = false
             collection.reloadData()
+            view.endEditing(true)
             
         } else {
             
