@@ -9,20 +9,27 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
 //This is the link to the VC
     @IBOutlet weak var collection: UICollectionView!
+ 
+//Search
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     var pokemonArray = [Pokemon]()
+    var pokemonSearchArray = [Pokemon]()
+    var inSearchMode = false
     var musicPlayer: AVAudioPlayer!
     
-//This is where all the things you need to happen first go
+//This is where to define/link the dependancies which inturn allow use to use the methods associated with them.
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collection.dataSource = self
         collection.delegate = self
+        searchBar.delegate = self
         
         parsePokemonCSV()
         initAudio()
@@ -77,7 +84,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             
-            let poke = pokemonArray[indexPath.row]
+            let poke: Pokemon!
+            
+            if inSearchMode {
+                poke = pokemonSearchArray[indexPath.row]
+                cell.configureCell(poke)
+                
+            } else {
+                poke = pokemonArray[indexPath.row]
+                cell.configureCell(poke)
+            }
             
             cell.configureCell(poke)
             
@@ -93,7 +109,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
 //This dictates how many objects are in the view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemonArray.count
+        
+        if inSearchMode {
+            
+            return pokemonSearchArray.count
+            
+        }
+            return pokemonArray.count
+        
     }
     
 //This is the number of sections in the view
@@ -106,7 +129,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 105, height: 105)
     }
   
-//This will play and pause the music and create button action
+//This will play and pause the music and create button effect (alpha)
     @IBAction func musicButtonPressed(_ sender: UIButton) {
         
         if musicPlayer.isPlaying {
@@ -122,7 +145,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
-    
+//SEARCH This is allowing for each key stroke to norrow the returned results. This requires a bool for if we are in search mode
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text == nil || searchBar.text == "" {
+            
+            inSearchMode = false
+            collection.reloadData()
+            
+        } else {
+            
+            inSearchMode = true
+            
+            let lower = searchBar.text!.lowercased()
+//SEARCH logic - search bar text included in array
+            pokemonSearchArray = pokemonArray.filter({$0.name.range(of: lower) != nil})
+            collection.reloadData()
+        }
+    }
     
 }
 
