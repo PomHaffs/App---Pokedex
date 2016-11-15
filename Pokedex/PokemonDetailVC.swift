@@ -30,6 +30,12 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = pokemon.name
+        
+        let image = UIImage(named: "\(pokemon.pokedexId)")
+            
+        mainImage.image = image
+        currentEvoImage.image = image
+        pokedexLabel.text = "\(pokemon.pokedexId)"
 
 //Whatever we run here only get call AFTER we have all info
         pokemon.downloadPokemonDetail {
@@ -44,6 +50,8 @@ class PokemonDetailVC: UIViewController {
         defenceLabel.text = pokemon.defense
         heightLabel.text = pokemon.height
         weightLabel.text = pokemon.weight
+        typeLabel.text = pokemon.type
+
     }
     
     
