@@ -1,17 +1,19 @@
 ### App---Pokedex
 
 ##Description: 
-Pokedex single page app. Allow for complete list of Pokemon and for each to be selected and relivent information displayed to user.
+Pokedex single page application allowing for complete list of Pokemon and for each to be selected and relivent information displayed.
 
 ##Cocoapods:
-Alamofire
+Alamofire - Elegant HTTP Networking in Swift
 
 ##API:
 Pokeapi
 
 ##Things I have learnt in this project:
-Live search bar functionality
-CollectionView and CollectionViewCells
-Parsing data from CSV
-AVFoundation for playing and pausing audio
-Lazing loading to allow for responsive app
+In app search bar set up and functionality
+CollectionView and CollectionViewCells useage
+Parsing data from CSV file
+AVFoundation setup for playing and pausing audio
+ReSTful design
+Multiple Alamofire search requests 
+Layered JSON data requests
