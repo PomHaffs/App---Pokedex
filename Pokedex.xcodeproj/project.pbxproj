@@ -20,7 +20,7 @@
 		FE8E603D1DD59AFD00D418D8 /* PokemonFontSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE8E603B1DD59AFD00D418D8 /* PokemonFontSolid.ttf */; };
 		FE8E60421DD5ABBE00D418D8 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8E60411DD5ABBE00D418D8 /* music.png */; };
 		FE8E60461DD5ABF300D418D8 /* pokemon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE8E60451DD5ABF300D418D8 /* pokemon.mp3 */; };
-		FE8E60481DDA85AE00D418D8 /* DetaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E60471DDA85AE00D418D8 /* DetaiViewController.swift */; };
+		FE8E604A1DDA861200D418D8 /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8E60491DDA861200D418D8 /* PokemonDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		FE8E603B1DD59AFD00D418D8 /* PokemonFontSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonFontSolid.ttf; sourceTree = "<group>"; };
 		FE8E60411DD5ABBE00D418D8 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
 		FE8E60451DD5ABF300D418D8 /* pokemon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pokemon.mp3; sourceTree = "<group>"; };
-		FE8E60471DDA85AE00D418D8 /* DetaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetaiViewController.swift; sourceTree = "<group>"; };
+		FE8E60491DDA861200D418D8 /* PokemonDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				FE56F6E51DD56C3F0076DCC6 /* ViewController.swift */,
-				FE8E60471DDA85AE00D418D8 /* DetaiViewController.swift */,
+				FE8E60491DDA861200D418D8 /* PokemonDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 			files = (
 				FE8E60371DD587F700D418D8 /* PokeCell.swift in Sources */,
 				FE56F6E61DD56C3F0076DCC6 /* ViewController.swift in Sources */,
-				FE8E60481DDA85AE00D418D8 /* DetaiViewController.swift in Sources */,
 				FE56F6E41DD56C3F0076DCC6 /* AppDelegate.swift in Sources */,
+				FE8E604A1DDA861200D418D8 /* PokemonDetailVC.swift in Sources */,
 				FE8E60341DD570D500D418D8 /* Pokemon.swift in Sources */,
 				FE8E60391DD594CC00D418D8 /* csv.swift in Sources */,
 			);

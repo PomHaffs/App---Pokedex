@@ -105,8 +105,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-//Once cell is selected this code will run
+//Once cell is selected this code will run and is now linked to PokemonDetailVC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var poke: Pokemon!
+        
+        if inSearchMode {
+            poke = pokemonSearchArray[indexPath.row]
+            
+        } else {
+            poke = pokemonArray[indexPath.row]
+        }
+//Sender refer to the bit of info you are passing across 
+        performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
     }
     
 //This dictates how many objects are in the view
@@ -171,6 +182,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collection.reloadData()
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDetailVC" {
+            if let detailsVC = segue.destination as? PokemonDetailVC {
+                if let poke = sender as? Pokemon {
+                    detailsVC.pokemon = poke
+                }
+            }
+        }
+    }
+    
+    
+    
     
 }
+
 
