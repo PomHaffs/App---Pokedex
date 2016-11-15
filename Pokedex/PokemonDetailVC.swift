@@ -30,8 +30,22 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = pokemon.name
+
+//Whatever we run here only get call AFTER we have all info
+        pokemon.downloadPokemonDetail {
+            self.updateUI()
+            
+        }
         
     }
+    
+    func updateUI() {
+        attackLabel.text = pokemon.attack
+        defenceLabel.text = pokemon.defense
+        heightLabel.text = pokemon.height
+        weightLabel.text = pokemon.weight
+    }
+    
     
 //This is full functionality for back button
     @IBAction func backButtonPressed(_ sender: UIButton) {
