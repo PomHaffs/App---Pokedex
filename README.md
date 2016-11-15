@@ -10,7 +10,8 @@ Alamofire
 Pokeapi
 
 ##Things I have learnt in this project:
-CollectView and CollectionViewCells
+Live search bar functionality
+CollectionView and CollectionViewCells
 Parsing data from CSV
 AVFoundation for playing and pausing audio
 Lazing loading to allow for responsive app
