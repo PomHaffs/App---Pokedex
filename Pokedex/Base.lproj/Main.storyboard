@@ -45,7 +45,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcg-Qh-vfh">
-                                        <rect key="frame" x="98" y="6" width="181" height="70"/>
+                                        <rect key="frame" x="97" y="6" width="181" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="181" id="Lhk-yY-0O9"/>
                                             <constraint firstAttribute="height" constant="70" id="cZj-hW-J05"/>
@@ -62,40 +62,6 @@
                                     <constraint firstItem="fcg-Qh-vfh" firstAttribute="top" secondItem="bqc-vH-6cc" secondAttribute="top" constant="6" id="nJ0-SH-tbu"/>
                                     <constraint firstItem="fcg-Qh-vfh" firstAttribute="centerX" secondItem="bqc-vH-6cc" secondAttribute="centerX" id="pVg-XE-Ijv"/>
                                     <constraint firstAttribute="trailing" secondItem="Gop-d4-rV6" secondAttribute="trailing" constant="8" id="urQ-46-jUt"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-JZ-sOo">
-                                <rect key="frame" x="10" y="10" width="375" height="65"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YU-Cd-0Gg">
-                                        <rect key="frame" x="337" y="27" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="N0b-MP-tMt"/>
-                                            <constraint firstAttribute="width" constant="30" id="vJP-3I-B9j"/>
-                                        </constraints>
-                                        <state key="normal" image="music"/>
-                                        <connections>
-                                            <action selector="musicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOF-Ka-eRO"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="728-FA-5ep">
-                                        <rect key="frame" x="97" y="6" width="181" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="181" id="0VA-IU-lFz"/>
-                                            <constraint firstAttribute="height" constant="70" id="FmE-cL-1Cn"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="PokemonHollowNormal" family="Pokemon Hollow" pointSize="45"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="728-FA-5ep" firstAttribute="centerX" secondItem="jXz-JZ-sOo" secondAttribute="centerX" id="6DA-Zd-VAW"/>
-                                    <constraint firstAttribute="height" constant="65" id="92d-3V-aSA"/>
-                                    <constraint firstItem="728-FA-5ep" firstAttribute="top" secondItem="jXz-JZ-sOo" secondAttribute="top" constant="6" id="gOn-Y2-cnx"/>
-                                    <constraint firstAttribute="trailing" secondItem="4YU-Cd-0Gg" secondAttribute="trailing" constant="8" id="lOR-Bh-8gL"/>
-                                    <constraint firstAttribute="bottom" secondItem="4YU-Cd-0Gg" secondAttribute="bottom" constant="8" id="s9x-na-td8"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" placeholder="Seach Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="IVu-Z6-eaz">
@@ -210,6 +176,9 @@
                                             <constraint firstAttribute="height" constant="23" id="ryg-lW-N2L"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="1Xg-fE-BgL" eventType="touchUpInside" id="erO-gs-6fz"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ivysaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekQ-dJ-hTa">
                                         <rect key="frame" x="65" y="4" width="245" height="57"/>
@@ -457,6 +426,20 @@
                             <constraint firstAttribute="trailing" secondItem="vme-Dh-GmP" secondAttribute="trailing" id="ySN-zC-2CT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="attackLabel" destination="g49-so-aMA" id="L0l-rj-9rA"/>
+                        <outlet property="currentEvoImage" destination="N4S-KN-uHY" id="CYh-v6-Wdo"/>
+                        <outlet property="defenceLabel" destination="l9O-TA-Aye" id="11h-hh-D5Q"/>
+                        <outlet property="descriptionLabel" destination="3fQ-CW-8Ov" id="5rm-6g-N00"/>
+                        <outlet property="evoLabel" destination="n8J-bR-9j9" id="omm-en-aMc"/>
+                        <outlet property="heightLabel" destination="vHS-dl-QCa" id="98s-XH-4Yy"/>
+                        <outlet property="mainImage" destination="6PL-AX-vaN" id="qRf-wq-da4"/>
+                        <outlet property="nameLabel" destination="ekQ-dJ-hTa" id="793-FH-dn4"/>
+                        <outlet property="nextEvoImage" destination="h3g-va-EBJ" id="NYX-wU-AHG"/>
+                        <outlet property="pokedexLabel" destination="Mbq-7E-mEh" id="TMo-gD-vY0"/>
+                        <outlet property="typeLabel" destination="hbv-Ml-XUY" id="eed-nY-frd"/>
+                        <outlet property="weightLabel" destination="dYs-hX-rvg" id="rPP-Oo-JUb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNe-yj-cLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
