@@ -1,9 +1,16 @@
-# App---Pokedex
+### App---Pokedex
 
-Description: 
+##Description: 
+Pokedex single page app. Allow for complete list of Pokemon and for each to be selected and relivent information displayed to user.
 
-Cocoapods:
+##Cocoapods:
 Alamofire
 
-API:
-Pkeapi
+##API:
+Pokeapi
+
+##Things I have learnt in this project:
+CollectView and CollectionViewCells
+Parsing data from CSV
+AVFoundation for playing and pausing audio
+Lazing loading to allow for responsive app
