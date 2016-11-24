@@ -16,4 +16,4 @@ Parsing data from CSV file.
 AVFoundation setup for playing and pausing audio.
 ReSTful design.
 Multiple Alamofire search requests. 
-Layered JSON data requests.
+Layered JSON requests.
