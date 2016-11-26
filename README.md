@@ -17,3 +17,4 @@ AVFoundation setup for playing and pausing audio.
 ReSTful design.
 Multiple Alamofire search requests. 
 Layered JSON requests.
+Index searching for array.
